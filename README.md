@@ -35,8 +35,3 @@ Siga os passos abaixo para configurar e rodar a aplicação em sua máquina:
 * Servidor PostgreSQL configurado e rodando.
 * Ter um banco de dados chamado `literalura_db` (ou o nome que você definiu no `application.properties`) no PostgreSQL.
 
-### 1. Clonar o Repositório
-
-```bash
-git clone SEU_LINK_DO_REPOSITORIO_GITHUB
-cd literalura-desafio-alura # Ou o nome da sua pasta do projeto
