@@ -1,4 +1,4 @@
-package br.com.alura.literalura; // Confirme se o pacote está correto
+package br.com.alura.literalura;
 
 import br.com.alura.literalura.dto.DadosAutor;
 import br.com.alura.literalura.dto.DadosLivro;
@@ -13,7 +13,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.transaction.annotation.Transactional; // Importe esta anotação
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.Comparator;
 import java.util.List;
@@ -157,7 +157,7 @@ public class LiteraluraApplication implements CommandLineRunner {
 		var ano = teclado.nextInt();
 		teclado.nextLine(); // Consome a nova linha
 
-		// Supondo que você queira autores que nasceram antes ou no ano e faleceram depois ou não faleceram
+
 		List<Autor> autoresVivos = autorRepository.findByAnoNascimentoLessThanEqualAndAnoFalecimentoGreaterThanEqualOrAnoFalecimentoIsNull(ano, ano);
 		if (autoresVivos.isEmpty()) {
 			System.out.println("Nenhum autor encontrado vivo no ano " + ano + ".");

@@ -19,17 +19,13 @@ public class Autor {
     private Integer anoFalecimento;
 
     @OneToMany(mappedBy = "autor", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-    // Relacionamento um-para-muitos: Um autor pode ter muitos livros.
-    // 'mappedBy = "autor"': Indica que o campo 'autor' na classe Livro é o lado "proprietário" da relação.
-    // 'cascade = CascadeType.ALL': Operações (persistir, remover, etc.) em Autor serão cascateadas para seus livros.
-    // 'fetch = FetchType.EAGER': Os livros serão carregados junto com o autor (cuidado com performance em grandes volumes).
-    private List<Livro> livros = new ArrayList<>(); // Inicializa a lista para evitar NullPointerException
 
-    // Construtor padrão (obrigatório para JPA)
+    private List<Livro> livros = new ArrayList<>();
+
+
     public Autor() {}
 
-    // Construtor para criar um Autor a partir de um objeto DadosAutor (DTO)
-    // Este é o construtor que foi necessário para resolver o erro 'Required type: DadosAutor'
+
     public Autor(DadosAutor dadosAutor) {
         this.nome = dadosAutor.nome(); // Atribui o nome do DTO
         this.anoNascimento = dadosAutor.anoNascimento(); // Atribui o ano de nascimento do DTO

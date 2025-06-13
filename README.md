@@ -2,6 +2,7 @@
 
 Um projeto Spring Boot que interage com a API Gutendex para buscar e gerenciar um catálogo de livros e seus autores, permitindo persistir os dados em um banco de dados relacional.
 O projeto é um desafio que faz parte da Formação ONE - Oracle Next Education + Alura Latam.
+* A API Gutendex foca em obras com domínio público, o que limita a busca por títulos ou autores mais recentes.
 
 ## ✨ Funcionalidades
 

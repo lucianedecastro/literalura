@@ -1,11 +1,11 @@
-package br.com.alura.literalura.model; // Confirme se o pacote está correto para sua estrutura
+package br.com.alura.literalura.model;
 
-import br.com.alura.literalura.dto.DadosLivro; // Importa a classe DTO DadosLivro
-import jakarta.persistence.*; // Importa todas as classes do pacote jakarta.persistence
-import java.util.List; // Para a lista de idiomas
-import java.util.stream.Collectors; // Para uso no método toString()
+import br.com.alura.literalura.dto.DadosLivro;
+import jakarta.persistence.*;
+import java.util.List;
+import java.util.stream.Collectors;
 
-@Entity // Indica que esta classe é uma entidade JPA e será mapeada para uma tabela no banco de dados
+@Entity
 @Table(name = "livros") // Define o nome da tabela no banco de dados como "livros"
 public class Livro {
     @Id // Marca o campo 'id' como a chave primária da tabela
@@ -15,8 +15,8 @@ public class Livro {
     @Column(unique = true) // Garante que o campo 'titulo' seja único na tabela
     private String titulo;
 
-    @ManyToOne(fetch = FetchType.EAGER) // ALTERAÇÃO AQUI: Removido 'cascade = CascadeType.PERSIST'
-    // 'fetch = FetchType.EAGER': O autor será carregado junto com o livro (útil para exibição imediata).
+    @ManyToOne(fetch = FetchType.EAGER)
+
     private Autor autor; // Relacionamento muitos-para-um: Muitos livros podem ter um autor
 
     @ElementCollection(fetch = FetchType.EAGER) // Indica que é uma coleção de tipos básicos (String)
